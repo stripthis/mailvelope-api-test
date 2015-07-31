@@ -215,11 +215,13 @@ function init() {
   });
 
   $('#importBtn').on('click', function() {
-    keyring.importPublicKey($('#armored_key').val()).then(function(status) {
-      $('#importStatus').val(status);
-    }).catch(function(error) {
-      console.log('Import error', error);
-    });
+    keyring.importPublicKey($('#armored_key').val())
+      .then(function(status) {
+        $('#importStatus').val(status);
+      })
+      .catch(function(error) {
+        console.log('Import error', error);
+      });
   });
 
   $('#createKeyGenGeneratorBtn').on('click', function() {
